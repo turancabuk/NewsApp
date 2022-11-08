@@ -8,7 +8,16 @@
 import UIKit
 
 class NewsCellVC: UITableViewCell {
-
-
-
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var newsSource: UILabel!
+    
+    
+    
+    
+    
+    
+    
+    
 }
