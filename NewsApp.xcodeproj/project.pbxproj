@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C683288291AD49F008251A5 /* NewsCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683287291AD49F008251A5 /* NewsCellVC.swift */; };
+		5C68328A291AE5DB008251A5 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C683289291AE5DB008251A5 /* NewsModel.swift */; };
 		5CB10496291ACDCC00714DF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB10495291ACDCC00714DF2 /* AppDelegate.swift */; };
 		5CB10498291ACDCC00714DF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB10497291ACDCC00714DF2 /* SceneDelegate.swift */; };
 		5CB1049A291ACDCC00714DF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB10499291ACDCC00714DF2 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		5C683287291AD49F008251A5 /* NewsCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellVC.swift; sourceTree = "<group>"; };
+		5C683289291AE5DB008251A5 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		5CB10492291ACDCC00714DF2 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB10495291ACDCC00714DF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CB10497291ACDCC00714DF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		5CB104AE291AD02200714DF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5C683289291AE5DB008251A5 /* NewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C68328A291AE5DB008251A5 /* NewsModel.swift in Sources */,
 				5CB1049A291ACDCC00714DF2 /* ViewController.swift in Sources */,
 				5C683288291AD49F008251A5 /* NewsCellVC.swift in Sources */,
 				5CB10496291ACDCC00714DF2 /* AppDelegate.swift in Sources */,
