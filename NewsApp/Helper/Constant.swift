@@ -18,7 +18,7 @@ class NetworkConstant {
         case apiKey = "08f919d29c534dff899bf1b83bbc2099"
         
         
-        static func getNews(url: String) -> String{
+        static func getNews(id: String) -> String{
             
              "\(baseUrl.rawValue)&\(apiKey.rawValue)"
            
