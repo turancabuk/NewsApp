@@ -23,6 +23,7 @@ final class MainViewModel {
             case .failure(let error):
                 print(error)
                 break
+                
             }
         }
     }
