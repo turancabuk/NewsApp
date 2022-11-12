@@ -13,8 +13,6 @@ import Foundation
 protocol NewsWebServiceProtocol {
     func fetch<T: Codable>(response: T.Type, with path: NewsAPICall, completion: @escaping (Result<T, Error>) -> Void)
 }
-
-
 final class NewsWebService: NewsWebServiceProtocol {
     func fetch<T: Codable>(response: T.Type, with path: NewsAPICall, completion: @escaping (Result<T, Error>) -> Void) {
         let urlRequest = URLRequest(url: path.url)
@@ -62,9 +60,6 @@ final class MainWebServiceAdapter: MainWebServiceAdapterProtocol {
 enum NetworkError: Error {
     case dataNotFound
 }
-
-
-
 
 
 

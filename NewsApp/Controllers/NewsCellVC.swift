@@ -20,4 +20,6 @@ class NewsCellVC: UITableViewCell {
     
     
     
+    
+    
 }
