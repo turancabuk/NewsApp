@@ -13,10 +13,13 @@ class NewsCellVC: UITableViewCell {
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsSource: UILabel!
     
-    
-    
-    
-    
+    func configure(_ vm: MainViewModel) {
+        
+        func article(model: Article){
+            
+            titleLabel.text = model.articleDescription
+        }
+    }
     
     
     

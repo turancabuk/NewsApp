@@ -18,7 +18,7 @@ enum NewsAPICall: String {
     }
     
     private var country: String {
-       "tr"
+        "tr"
     }
     
     case getNews

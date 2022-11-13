@@ -19,11 +19,10 @@ final class MainViewModel {
         webService.getNews { result in
             switch result {
             case .success(let response):
-                print("article", response.articles!.first) 
+                print("article", response.articles!.first)
             case .failure(let error):
                 print(error)
                 break
-                
                 
             }
         }

@@ -14,12 +14,7 @@ struct Welcome: Codable {
     let totalResults: Int?
     let articles: [Article]?
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.status = try container.decodeIfPresent(String.self, forKey: .status)
-        self.totalResults = try container.decodeIfPresent(Int.self, forKey: .totalResults)
-        self.articles = try container.decodeIfPresent([Article].self, forKey: .articles)
-    }
+  
 }
 
 // MARK: - Article
@@ -29,24 +24,19 @@ struct Article: Codable {
     let title, articleDescription: String?
     let url: String?
     let urlToImage: String?
-    let publishedAt: String?
+    let publishedAt: Date? = nil
     let content: String?
     
     
-
+    
     enum CodingKeys: String, CodingKey {
         case source, author, title
         case articleDescription
-        case url, urlToImage, publishedAt, content
+        case url, urlToImage,publishedAt, content
         
         
     }
 }
-
-
-
-
-
 
 // MARK: - Source
 struct Source: Codable {
@@ -63,7 +53,7 @@ class JSONNull: Codable, Hashable {
         return 0
     }
     public init() {}
-
+    
     public required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if !container.decodeNil() {

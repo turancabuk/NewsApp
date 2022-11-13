@@ -8,8 +8,6 @@
 import Foundation
 
 
-
-
 protocol NewsWebServiceProtocol {
     func fetch<T: Codable>(response: T.Type, with path: NewsAPICall, completion: @escaping (Result<T, Error>) -> Void)
 }
@@ -62,73 +60,3 @@ enum NetworkError: Error {
 }
 
 
-
-
-/*public class BaseResult<T: Decodable> : Decodable {
-    init(){}
-}
-class Webservice {
-    static let shared = Webservice()
-    enum APIError: Error {
-        case error(_ errorString: String)
-    }
-    public func request<T: Decodable> (url: String, parameters: [String : Any] = [:], method: String = "GET", httpHeaders: String? = nil, success: @escaping (T) -> Void, failure: @escaping () -> () ) {
-        let newUrl = self.encodeUrl(url)
-        let postData = NSData(data: "".data(using: String.Encoding.utf8)!)
-        let request = NSMutableURLRequest(url: NSURL(string: newUrl )! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 30.0)
-        request.httpMethod = method
-        request.httpBody = postData as Data
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if error != nil || data == nil {
-                print(error)
-                return
-            }
-            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Server error!")
-                return
-            }
-            guard let mime = response.mimeType, mime == "application/json" else {
-                print("Wrong MIME type!")
-                return
-            }
-            
-            do {
-                let object = try JSONDecoder().decode(T.self, from: data! )
-                success(object)
-            } catch {
-                failure()
-            }
-        })
-        dataTask.resume()
-    }
-    
-    func encodeUrl(_ url : String) -> String {
-        return url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-    }
-}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- */
