@@ -10,10 +10,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    
+    var viewModel: MainViewModel?
     @IBOutlet weak var tableView: UITableView!
-    
-    var viewModel: MainViewModel = .init(webService: .init(webService: NewsWebService()))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
-        viewModel.getNews()
+        viewModel = MainViewModel(webService: MainWebServiceAdapter(webService: NewsWebService()))
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

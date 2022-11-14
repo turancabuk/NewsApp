@@ -15,14 +15,9 @@ class NewsCellVC: UITableViewCell {
     
     func configure(_ vm: MainViewModel) {
         
-        func article(model: Article){
-            
-            titleLabel.text = model.articleDescription
+        func articleModel(model: Article?) {
+            guard let article = model  else {return}
+            titleLabel.text = model?.title
         }
     }
-    
-    
-    
-    
-    
 }
