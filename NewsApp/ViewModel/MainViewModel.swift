@@ -11,15 +11,20 @@ import Foundation
 final class MainViewModel {
     private let webService: MainWebServiceAdapter
     
-    init(webService: MainWebServiceAdapter) {
+    var articleList = [Article]()
+    
+    init(webService: MainWebServiceAdapter, articleList: [Article] = [Article]()){
         self.webService = webService
     }
     
-    func getNews() {
+    func getNews(complrtionHandler: @escaping () -> Void) {
         webService.getNews { result in
             switch result {
             case .success(let response):
-                print("article", response.articles!.first)
+                if let articles = response.articles {
+                    self.articleList = articles
+                }
+                complrtionHandler()
             case .failure(let error):
                 print(error)
                 break

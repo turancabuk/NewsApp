@@ -1,9 +1,7 @@
 //
 //  ViewController.swift
 //  NewsApp
-//
 //  Created by Turan Çabuk on 8.11.2022.
-//
 
 import UIKit
 
@@ -11,6 +9,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     var viewModel: MainViewModel?
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,19 +20,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         viewModel = MainViewModel(webService: MainWebServiceAdapter(webService: NewsWebService()))
         
+        guard let viewModel = viewModel else {return}
+        viewModel.getNews{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier") as! NewsCellVC
-        cell.titleLabel.text = "başlık buraya gelecek"
-        cell.newsSource.text = "haber kaynağı"
-        cell.newsImage.image = UIImage(named: "ekran")
+        let cell: NewsCellVC = (tableView.dequeueReusableCell(withIdentifier: "cellIdentifier") as? NewsCellVC)!
+        let article = viewModel?.articleList[indexPath.row]
+        cell.articleModel(model: article)
         return cell
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 12
+        return viewModel?.articleList.count ?? 0
     }
+   
 }
