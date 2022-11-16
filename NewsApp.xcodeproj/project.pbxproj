@@ -22,6 +22,7 @@
 		5CB1049F291ACDCC00714DF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB1049E291ACDCC00714DF2 /* Assets.xcassets */; };
 		5CB104A2291ACDCC00714DF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB104A0291ACDCC00714DF2 /* LaunchScreen.storyboard */; };
 		5CB104AB291ACF0700714DF2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB104AA291ACF0700714DF2 /* Constant.swift */; };
+		5CB1F921292570770038CD5B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1F920292570770038CD5B /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5CB104A1291ACDCC00714DF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CB104A3291ACDCC00714DF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CB104AA291ACF0700714DF2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		5CB1F920292570770038CD5B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		5CB10494291ACDCC00714DF2 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				5CB1F922292570D70038CD5B /* Extension */,
 				5CB104B2291AD0BF00714DF2 /* Controllers */,
 				5CB104B1291AD08500714DF2 /* App */,
 				5CB104B0291AD03500714DF2 /* Supporting Files */,
@@ -154,6 +157,14 @@
 				5C2E4B432923F50B000F4EAE /* DetailViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5CB1F922292570D70038CD5B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5CB1F920292570770038CD5B /* Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				5C68328A291AE5DB008251A5 /* NewsModel.swift in Sources */,
 				5C68328F291AEAED008251A5 /* Webservice.swift in Sources */,
 				5C2E4B462923F7AB000F4EAE /* DetailViewModel.swift in Sources */,
+				5CB1F921292570770038CD5B /* Extension.swift in Sources */,
 				5CB1049A291ACDCC00714DF2 /* ViewController.swift in Sources */,
 				5C683288291AD49F008251A5 /* NewsCellVC.swift in Sources */,
 				5CB10496291ACDCC00714DF2 /* AppDelegate.swift in Sources */,

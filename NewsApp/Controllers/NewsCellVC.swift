@@ -15,8 +15,9 @@ class NewsCellVC: UITableViewCell {
         func articleModel(model: Article?) {
             guard let model = model  else {return}
             titleLabel.text = model.title
-            titleLabel.textColor = .brown
-            sourceLabel.text = model.url
+            titleLabel.textColor = .darkText
+            sourceLabel.text = model.author
+            sourceLabel.textColor = .link
             
             let url = URL(string: model.urlToImage ?? "sondakika")
             newsImage.kf.setImage(with: url)

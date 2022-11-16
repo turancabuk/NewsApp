@@ -21,8 +21,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         titleLabel.text = selectedNews?.title
+        titleLabel.textColor = .darkText
         descriptionLabel.text = selectedNews?.content
-        
+      
         var url = URL(string: selectedNews?.urlToImage ?? "")
         newsImageView.kf.setImage(with: url)
         

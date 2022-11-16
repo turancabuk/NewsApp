@@ -11,6 +11,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var viewModel: MainViewModel?
     var chosenNews: Article?
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -28,25 +29,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: NewsCellVC = (tableView.dequeueReusableCell(withIdentifier: "cellIdentifier") as? NewsCellVC)!
-        let article = viewModel?.articleList[indexPath.row]
-        cell.articleModel(model: article)
-        return cell
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.articleList.count ?? 0
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenNews = viewModel?.articleList[indexPath.row]
-        performSegue(withIdentifier: "toDetailsVC", sender: indexPath)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailsVC" {
-            let destinationVc = segue.destination as! DetailViewController
-            destinationVc.selectedNews = chosenNews
-        }
-    }
-   
 }
