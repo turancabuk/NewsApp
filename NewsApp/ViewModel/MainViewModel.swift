@@ -26,9 +26,7 @@ final class MainViewModel {
                 }
                 complrtionHandler()
             case .failure(let error):
-                print(error)
-                break
-                
+                print(error)                
             }
         }
     }

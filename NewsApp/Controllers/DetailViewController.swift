@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailViewController: UIViewController {
+    
+    var selectedNews: Article?
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
@@ -17,7 +20,12 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        titleLabel.text = selectedNews?.title
+        descriptionLabel.text = selectedNews?.content
+        
+        var url = URL(string: selectedNews?.urlToImage ?? "")
+        newsImageView.kf.setImage(with: url)
+        
 
        
     }

@@ -89,6 +89,7 @@
                     <navigationItem key="navigationItem" id="1wN-nv-Cz2"/>
                     <connections>
                         <outlet property="tableView" destination="d1C-Zj-42Z" id="UN4-V6-d1l"/>
+                        <segue destination="p1K-LH-tOB" kind="presentation" identifier="toDetailsVC" id="0Fb-zP-vTz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,10 +101,10 @@
             <objects>
                 <viewController id="p1K-LH-tOB" customClass="DetailViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FMj-K2-uEl">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTA-0A-QjM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTA-0A-QjM">
                                 <rect key="frame" x="16" y="47" width="358" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="lAn-Kd-bm7"/>
@@ -113,8 +114,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNk-Vh-X5A">
-                                <rect key="frame" x="16" y="440" width="358" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNk-Vh-X5A">
+                                <rect key="frame" x="16" y="440" width="358" height="313"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="358" id="BBZ-Le-yb1"/>
                                     <constraint firstAttribute="height" constant="313" id="zZh-BJ-Dtp"/>
