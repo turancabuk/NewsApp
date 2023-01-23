@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension ViewController {
+extension MainViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: NewsCellVC = (tableView.dequeueReusableCell(withIdentifier: "cellIdentifier") as? NewsCellVC)!
         let article = viewModel?.articleList[indexPath.row]
@@ -16,7 +16,7 @@ extension ViewController {
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.articleList.count ?? 0
+        return viewModel!.articleList.count 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         chosenNews = viewModel?.articleList[indexPath.row]

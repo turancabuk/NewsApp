@@ -1,11 +1,11 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  NewsApp
 //  Created by Turan Çabuk on 8.11.2022.
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     var viewModel: MainViewModel?
@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBOutlet weak var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         
         viewModel = MainViewModel(webService: MainWebServiceAdapter(webService: NewsWebService()))
-        
+     
         guard let viewModel = viewModel else {return}
         viewModel.getNews{
             DispatchQueue.main.async {

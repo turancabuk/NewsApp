@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var sourceLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -23,8 +24,11 @@ class DetailViewController: UIViewController {
         titleLabel.text = selectedNews?.title
         titleLabel.textColor = .darkText
         descriptionLabel.text = selectedNews?.content
+        descriptionLabel.font = UIFont(name: "Helvetica", size: 12)
+        descriptionLabel.textAlignment = .center
+        sourceLabel.text = selectedNews?.source?.name
       
-        var url = URL(string: selectedNews?.urlToImage ?? "")
+        let url = URL(string: selectedNews?.urlToImage ?? "")
         newsImageView.kf.setImage(with: url)
         
 

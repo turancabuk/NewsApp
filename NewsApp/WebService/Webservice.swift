@@ -3,13 +3,12 @@
 //  NewsApp
 //
 //  Created by Turan Çabuk on 8.11.2022.
-//
 
 import Foundation
 
 
 protocol NewsWebServiceProtocol {
-    func fetch<T: Codable>(response: T.Type, with path: NewsAPICall, completion: @escaping (Result<T, Error>) -> Void)
+    func fetch<T: Codable>(response: T.Type, with path: NewsAPICall, completion: @escaping (Result <T, Error>) -> Void)
 }
 final class NewsWebService: NewsWebServiceProtocol {
     func fetch<T: Codable>(response: T.Type, with path: NewsAPICall, completion: @escaping (Result<T, Error>) -> Void) {
@@ -42,6 +41,7 @@ protocol MainWebServiceAdapterProtocol {
 }
 
 final class MainWebServiceAdapter: MainWebServiceAdapterProtocol {
+    
     private let webService: NewsWebServiceProtocol
     
     init(webService: NewsWebServiceProtocol) {
@@ -52,9 +52,6 @@ final class MainWebServiceAdapter: MainWebServiceAdapterProtocol {
         webService.fetch(response: Welcome.self, with: .getNews, completion: completion)
     }
 }
-
-
-
 enum NetworkError: Error {
     case dataNotFound
 }
